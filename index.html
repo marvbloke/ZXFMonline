@@ -14,9 +14,12 @@
             body {
                 background-color: #444;
             }
-            #jsspeccy, #guiparent {
+            #titlebar, #jsspeccy, #guiparent {
                 width: 960px;
                 margin: auto;
+            }
+            #titlebar {
+                background-color: #FFF;
             }
             #jsspeccy {
                 background-color: #FFF;
@@ -33,23 +36,24 @@
             canvas#virtkeys {
                 image-rendering: auto;
             }
-            #bottombar {
+            #instructions {
                 position: absolute;
                 bottom: 0;
                 width: 100%;
                 font-family: Arial, Helvetica, sans-serif;
-                background-color: #cef;
+                background-color: #000;
                 text-align: center;
-                font-size: 50px;
+                font-size: 16px;
                 padding: 10px 0px;
             }
 
         </style>
     </head>
     <body onload="onBodyLoad()">
+        <div id="titlebar"><img src="zxfmtitle.png"></div>
         <div id="jsspeccy"></div>
         <div id="guiparent"><canvas id=virtkeys width=960></canvas></div>
-        <!-- <div id="bottombar"></div> -->
+        <div id="instructions">test.</div>
     </body>
 
     <script src="canvasgui/PointerEventHandler.js"></script>
