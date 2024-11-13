@@ -16,5 +16,54 @@
     </head>
     <body onload="emu = JSSpeccy(document.getElementById('jsspeccy'), {machine: 48, zoom: 2, sandbox: true, autoStart: true, openUrl: 'https://zxfm.vercel.app/ZXFM2425.tap', autoLoadTapes: true})">
         <div id="jsspeccy"></div>
+    
+          <h1>ZXFM</h1>
+          <p>Written for the ZX Spectrum by Matthew Begg (licence: CC BY-SA 4.0)</p>
+          <h2>Compatible with</h2>
+          <ul>
+            <li>Sinclair ZX Spectrum 16k/48k/+/128k/+2/+3/Next</li>
+          </ul>
+          <h2>Players</h2>
+          <p>1</p>
+          <h2>Controls</h2>
+          <p>Keyboard</p>
+          <h2>INTRODUCTION</h2>
+          <p>ZXFM is a football management simulator for the Sinclair ZX Spectrum written in just 10 lines of BASIC! Play an entire season as manager of a team from your favourite league, or create your own leagues and teams. Manage injuries, buy and sell in the transfer market and save your progress to tape or disk as you go along. ZXFM was inspired by the original 1982 "Football Manager" game by Kevin Toms (which was also written in BASIC but used over 700 lines of code!)</p>
+        
+          <h2>PLAYING THE GAME</h2>
+        
+          <h3>Choosing a Team</h3>
+          <p>You have 20 teams to choose from. Team 1 has the highest rating, Team 20 has the lowest, so choose your team wisely depending on how much of a challenge you want. Type the number of the team you want and press ENTER.</p>
+        
+          <h3>League Table Screen</h3>
+          <p>Use the 'R' key to rename a team and change its colours. Type the number of the team to rename and press ENTER. Enter the name you want (up to 14 characters) then press ENTER. Type the colour number for the ink (foreground) and paper (background) you want. Keep pressing 'R' to change more teams' names and colours. See Appendix A of this document for some example leagues you can type in. When you're happy with the league table, press any other key (e.g. ENTER). You can get back to the League Table screen any time using the 'T' key.</p>
+        
+          <h3>Team Selection Screen</h3>
+          <p>By default, the names of your players are randomly generated. Use the 'N' key to rename a player. Enter the name you want (up to 14 characters) and press ENTER. Keep pressing 'N' to change more players' names.</p>
+          <p>The team selection screen is laid out at follows:</p>
+          <ul>
+            <li>'W' shows the current week number</li>
+            <li>'Rtg' shows the overall team rating</li>
+            <li>'Money' shows how much money you have available to spend. This increases each week due to ticket sales and TV money, and also increases when you sell players. It decreases when you buy players</li>
+            <li>The main table shows the number, name, position (G=goalkeeper, D=defence, M=midfield, S=striker), rating and money value of each player. The players in positions 1 to 11 are the ones counted towards your overall team rating (shown at the top) and are your chosen team. The players in grey (positions 12 to 18) are available to you if you wish to swap (perhaps to increase your team rating or due to injury). Injured players are shown in red and do not count towards your team rating, so you'll need to use the 'Move' command to bring someone else in for them</li>
+            <li>'Next game' shows who your next opponent is. Twice during the season, it'll be the international break which means no fixture to play (although you can still buy/sell players)</li>
+          </ul>
+          <h3>Main Menu</h3>
+          <p>Press the first letter (shown as a capital) of each option to select it:</p>
+          <ul>
+            <li>'M' for Move: moves/swaps two players in your team. Type the player numbers (each followed by ENTER) to make the swap. The players must play in the same position (e.g. defender for a defender, striker for a striker etc).</li>
+            <li>'N' for Names: change the name of a player. Type the number of the player you want to rename and press ENTER. Type the name (up to 14 characters) then press ENTER</li>
+            <li>'S' for Save: saves your current game to to be played later. On the 16k/48k/128k/+2/+2A this is saved to tape, on the +3 it is saved to disk. Enter the filename (up to 8 characters) and press ENTER. Later on, simply load the saved file using LOAD "filename", LOAD "" or 'Loader'. You will resume where you left off.</li>
+            <li>'T' for Table: switches to the league table screen where you can see the current standings and use the 'R' key to rename a team (either your own or any of the others)</li>
+            <li>'B' for Buy: once each week you'll have the option to buy a player who is available on the transfer market. They are offered at varying values so sometimes you'll get a bargain and sometimes you'll end up paying over the odds if you're desperate! Make sure you have plenty of money available (top right) before pressing 'B'. The offered player is shown with their name, position, rating and cost (e.g. "I.Lane G (88) £10.3m" is a goalkeeper rated at 88 who would cost you £10.3 million. If you want to buy the player, press 'Y', otherwise press 'N'. The new player will appear in one of your empty slots, and you'll see how much the player is actually worth. If you press 'Y' but don't have enough money, nothing happens. Remember: you only get offered a player once a week, so if you don't buy one, you'll have to wait until the following week.</li>
+            <li>'E' for sEll: you can sell any of your players at the displayed value at any time. Careful though because leaving any of the first 11 slots empty will badly affect your overall team rating. Enter the number of the player you want to sell and press ENTER. You'll see your available money increase at the top.</li>
+            <li>'P' for Play: when you're happy with your team selection, choose this option to play this week's fixture (see below)</li>
+        </ul>
+        <h3>Playing a match</h3>    
+        <p>Games are played with each team's rating taken into account (which is why you should always get your overall team rating as high as you can before playing a match). During a match, your team and the opposition team are shown at the top, along with the current score. The 'vidiprinter' appears at the bottom and moves up the screen as the goals go in. The match clock is shown in the green box (it goes red when stoppage time is played after 90 minutes). Goals are reported as they go in, with the minute scored in brackets. Goals scored by your team also include the name of the scorer. After the game, the 'WAIT' message appears while the new league standings are calculated. This can take between 7 and 15 seconds before the new league table is displayed and the next week begins.</p>
+        <h3>End of season</h3>
+        <p>After 40 weeks (38 games plus 2 weeks' international break), the game comes to an end. Choosing 'Play' increases the week, but no games will be played. Feel free to restart the game (Shift+SPACE then 'RUN') to enjoy another full season!</p>
+        <h3>Troubleshooting</h3>
+        <p>If the game crashes at all (usually due to the wrong type of number/word being entered), just type GOTO 3 and press ENTER to return to your current game.</p>
     </body>
 </html>
